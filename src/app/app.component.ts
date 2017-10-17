@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteConfig, Router, RouteParams } from '@angular/router-deprecated';
+import { ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteConfig, Router, RouteParams } from '@angular/router';
 
 @Component({
   selector: 'app-root',
