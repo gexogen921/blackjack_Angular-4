@@ -1,21 +1,16 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteConfig, Router, RouteParams } from '@angular/router';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
-
 })
 
-@RouteConfig([
-  {path: '/', component: AppComponent, name: 'AppComponent', useAsDefault: true},
-  {path: '/AppComponent', component: AppComponent, name: 'AppComponent'},
-  {path: '/game', component: gamecomponent , name: 'GameComponent'},
-
-  {path: '/**', redirectTo: ['Home']}
-])
-
 export class AppComponent {
-  title = 'Blackjack';
+  constructor(private router: Router) {
+    if(!localStorage.getItem('username')) {
+      this.router.navigate(['/login']);
+    }
+  }
 }
