@@ -1,0 +1,7 @@
+.cart {
+    width: 140px;
+    height: 180px;
+    background-image: url("../../img/kart.jpg");
+    background-size: cover;
+    margin-top: 10px;
+}

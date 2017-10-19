@@ -1,5 +1,6 @@
 import { Component, Input  } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'login',
@@ -12,7 +13,7 @@ export class LoginComponent {
 
     public isLoginFailed: boolean = false;
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private router: Router) {
 
     }
 
@@ -21,10 +22,18 @@ export class LoginComponent {
             this.isLoginFailed = false;
             localStorage.setItem('username', this.name);
 
+            let params = new HttpParams();
+            params = params.append('name', this.name);
+            params = params.append('password', this.password);
 
-            this.http.get('/api/items').subscribe(data => {
-                // Read the result field from the JSON response.
-                console.log(data);
+            this.http.get('/api/login', {
+                params: params
+            }).subscribe((data) => {
+                if(data['status']) {
+                    this.router.navigate(['/game']);
+                } else {
+                    this.isLoginFailed = true;
+                }
             });
         } else {
             this.isLoginFailed = true;

@@ -6,6 +6,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { GameComponent } from './game/game.component';
+import { DilerComponent } from './diler/diler.component';
+import { PlayerComponent } from './player/player.component';
 
 const routers: Routes = [
   { path: '', component: AppComponent },
@@ -17,7 +19,9 @@ const routers: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    GameComponent
+    GameComponent,
+    DilerComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,

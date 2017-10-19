@@ -3,6 +3,7 @@ var http = require("http");
 var express = require("express");
 var morgan = require("morgan");
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var port = 5003;
 
@@ -16,23 +17,23 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-var mongoose = require('mongoose');
-
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/blackjack', {
     useMongoClient: true
 });
 
-var User = mongoose.model('Users', { name: String, password: String });
+// var User = mongoose.model('Users', { name: String, password: String });
+//
 
-var user = new User({ name: 'Gooldan', password: '1' });
-user.save(function (err) {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log('user');
-    }
-});
+
+// var user = new User({ name: 'Gooldan', password: '1' });
+// user.save(function (err) {
+//     if (err) {
+//         console.log(err);
+//     } else {
+//         console.log('user');
+//     }
+// });
 
 const api = require('./api');
 

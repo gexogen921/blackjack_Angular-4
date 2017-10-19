@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'game',
@@ -6,9 +7,16 @@ import { Component } from '@angular/core';
 })
 
 export class GameComponent {
-
-    constructor() {
+    constructor(private router: Router) {
 
     }
 
+    logOut() {
+        localStorage.removeItem('username');
+        this.router.navigate(['/login']);
+    }
+
+    resetGame() {
+        window.location.reload();
+    }
 }
