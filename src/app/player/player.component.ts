@@ -10,6 +10,8 @@ export class PlayerComponent {
     public firstcart: number;
     public secondcart: number;
     public total: number;
+    public Loser: string;
+
 
     public defaultCarts: Array<number> = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
@@ -17,10 +19,9 @@ export class PlayerComponent {
         this.firstcart = this.defaultCarts[this.getRandomInt(0, 9)];
         this.secondcart = this.defaultCarts[this.getRandomInt(0, 9)];
 
-        var total= this.firstcart + this.secondcart;
-        /**
 
-         * first + second **/
+         this.total= this.firstcart + this.secondcart;
+
     }
 
     getRandomInt(min, max) {
@@ -32,24 +33,17 @@ export class PlayerComponent {
 
         this.total += newCart;
 
-        var message='';
 
-        if (this.total >= 21){
-            message = "win";
-        }
-        else {
-            message = "lose";
+        if (this.total >= 21) {
+            this.total = this.total;
+
         }
         /*
         total += newCart
         check
          */
     }
-
-    openCarts() {
-        /*
-        show total
-         */
-         var show = this.total;
+    openCarts(total) {
+        return this.total;
     }
 }

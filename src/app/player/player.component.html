@@ -11,14 +11,14 @@
                 {{secondcart}}
             </div>
         </div>
-            <button type="button" class="btn btn-default" (click)="button" style="float: right;
+            <button type="button" class="btn btn-default" (click)="getNewCart(total)" style="float: right;
     margin: 10px;">+</button>
 
-            <button type="button" class="btn btn-default" (click)="button" style="float: right;
-    margin: 10px;">open</button>
+            <button class="btn btn-default" (click)="openCarts()" style="float: right;
+                margin: 10px;">Open</button>
+        <div >
+            <h3>{{Loser}}</h3> {{total}}
+        </div>
     </div>
 </div>
 
-<div >
-    {{total}}
-</div>
