@@ -1,31 +1,25 @@
 <div class="row">
     <div class="col-md-12">
         <div class="col-md-2">
-
             <div class="cart">
-
+                <span *ngIf="closeGame">{{firstcart}}</span>
             </div>
         </div>
 
         <div class="col-md-2">
             <div class="cart">
-
+                <span *ngIf="closeGame">{{secondcart}}</span>
             </div>
         </div>
     </div>
+    <div *ngIf="closeGame">
+        <div>
+            {{total}}
+        </div>
 
-</div>
-<div>
-
-
-
-
-    <!--<div *ngif="openCarts(dilertotal)">-->
-        <!--{{dilertotal}}-->
-    <!--</div>-->
-
-    <div *ngIf="dilertotal >= 21">
-        {{loser}}
+        <div *ngIf="total >= 21">
+            {{result}}
+        </div>
     </div>
 </div>
 

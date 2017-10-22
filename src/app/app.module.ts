@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { GameComponent } from './game/game.component';
 import { DilerComponent } from './diler/diler.component';
 import { PlayerComponent } from './player/player.component';
+import {Broadcaster} from './broadcaster';
 
 const routers: Routes = [
   { path: '', component: AppComponent },
@@ -32,7 +33,8 @@ const routers: Routes = [
         { enableTracing: true }
     )
   ],
-  providers: [],
+  providers: [Broadcaster],
+
   bootstrap: [AppComponent],
 })
 

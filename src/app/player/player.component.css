@@ -5,3 +5,11 @@
     background-size: cover;
     margin-top: 50px;
 }
+.open-carts {
+    float: right;
+    margin: 10px;
+}
+.new-cart {
+    float: right;
+    margin: 10px;
+}

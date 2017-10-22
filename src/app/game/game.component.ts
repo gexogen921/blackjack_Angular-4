@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'game',
     templateUrl: './game.component.html',
+    styleUrls: ['./game.component.css'],
+
 })
 
 export class GameComponent {
