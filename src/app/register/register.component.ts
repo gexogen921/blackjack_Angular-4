@@ -3,22 +3,23 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'login',
-    templateUrl: './login.component.html',
-    styleUrls:[('./login.component.css')],
+    selector: 'register',
+    templateUrl: './register.component.html',
+    styleUrls:[('./register.component.css')],
 })
 
-export class LoginComponent {
+export class RegisterComponent {
     @Input() public name: string;
     @Input() public password: string;
 
     public isLoginFailed: boolean = false;
+    public message: string;
 
     constructor(private http: HttpClient, private router: Router) {
 
     }
 
-    loginUser() {
+    registerUser() {
         if(this.name && this.password) {
             this.isLoginFailed = false;
             localStorage.setItem('username', this.name);
@@ -27,12 +28,13 @@ export class LoginComponent {
             params = params.append('name', this.name);
             params = params.append('password', this.password);
 
-            this.http.get('/api/login', {
+            this.http.get('/api/register', {
                 params: params
             }).subscribe((data) => {
                 if(data['status']) {
                     this.router.navigate(['/game']);
                 } else {
+                    this.message = data['message'];
                     this.isLoginFailed = true;
                 }
             });
@@ -40,8 +42,7 @@ export class LoginComponent {
             this.isLoginFailed = true;
         }
     }
-
-    registerUser(){
-        this.router.navigate(['/register']);
+    loginUser(){
+        this.router.navigate(['/login']);
     }
 }

@@ -8,11 +8,13 @@ import { LoginComponent } from './login/login.component';
 import { GameComponent } from './game/game.component';
 import { DilerComponent } from './diler/diler.component';
 import { PlayerComponent } from './player/player.component';
+import { RegisterComponent } from './register/register.component'
 import {Broadcaster} from './broadcaster';
 
 const routers: Routes = [
   { path: '', component: AppComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'game', component: GameComponent }
 ];
 
@@ -22,7 +24,8 @@ const routers: Routes = [
     LoginComponent,
     GameComponent,
     DilerComponent,
-    PlayerComponent
+    PlayerComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

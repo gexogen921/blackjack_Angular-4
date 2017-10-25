@@ -2,6 +2,7 @@ var path = require('path');
 var router = require('express').Router();
 
 router.use('/login', require('./login'));
+router.use('/register', require('./register'));
 
 router.use('/', function(req, res) {
     res.json({

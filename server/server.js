@@ -22,19 +22,6 @@ mongoose.connect('mongodb://localhost:27017/blackjack', {
     useMongoClient: true
 });
 
-// var User = mongoose.model('Users', { name: String, password: String });
-//
-
-
-// var user = new User({ name: 'Gooldan', password: '1' });
-// user.save(function (err) {
-//     if (err) {
-//         console.log(err);
-//     } else {
-//         console.log('user');
-//     }
-// });
-
 const api = require('./api');
 
 app.use('/api', api);

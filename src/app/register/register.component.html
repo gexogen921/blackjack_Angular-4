@@ -1,7 +1,8 @@
-<div class="row login">
-    <div class="col-md-4 col-md-offset-4">
-        <h1>Sign In</h1>
-        <form (ngSubmit)="loginUser()">
+
+<div class="row register">
+    <div class="col-md-4 col-md-offset-4" >
+        <h1>Sign Up</h1>
+        <form (ngSubmit)="registerUser()">
             <div class="form-group">
                 <input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder="Login">
             </div>
@@ -9,7 +10,7 @@
                 <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-default send">Send</button>
-            <button type="button" class="btn btn-default redirect" (click)="registerUser()">Sign Up</button>
+            <button type="button" class="btn btn-default redirect" (click)="loginUser()">Sign In</button>
         </form>
     </div>
 </div>
